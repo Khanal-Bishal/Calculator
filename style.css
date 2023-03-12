@@ -1,0 +1,251 @@
+/* ==============varibles for theme one=========== */
+:root {
+    --screen-bg-clr: hsl(224, 36%, 15%);
+    --keypad-bg-clr: hsl(223, 31%, 20%);
+    --main-bg-clr: hsl(222, 26%, 31%);
+
+    --key-bg-clr: hsl(225, 21%, 49%);
+    --key-shadow-clr: hsl(224, 28%, 35%);
+
+    --key-toggle-clr: hsl(6, 63%, 50%);
+    --key-toggle-shadow: hsl(6, 70%, 34%);
+
+    --numbers-toogle-bg-clr: hsl(30, 25%, 89%);
+    --number-shadow: hsl(28, 16%, 65%);
+
+    --number-text-clr: hsl(221, 14%, 31%);
+    --key-text-clr: hsl(0, 0%, 100%);
+
+    --key-fs: 32px;
+    --key-ff: 'League Spartan', sans-serif;
+    --key-weight: 700;
+}
+
+/* =============resetting the css ===================== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--main-bg-clr);
+    font-family: var(--key-ff);
+    
+}
+
+/*=================== utility classes  ======================*/
+.keypad {
+    color: var(--number-text-clr);
+    background-color: var(--numbers-toogle-bg-clr);
+    font-size: var(--key-fs);
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px var(--number-shadow);
+    transition: 250ms;
+    cursor: pointer;
+}
+
+.keypad:hover {
+    background-color: var(--key-text-clr);
+}
+
+.keypad>span {
+    position: relative;
+    top: 3rem;
+}
+
+.del-reset {
+    color: var(--number-text-clr);
+    background-color: var(--key-bg-clr);
+    font-size: var(--key-fs);
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px var(--key-shadow-clr);
+    cursor: pointer;
+
+}
+
+.del-reset>span {
+    position: relative;
+    top: 3rem;
+}
+
+.del-reset:hover {
+    background-color: hsl(225, 50%, 61%);
+    color: var(--numbers-toogle-bg-clr);
+    transition: 250ms;
+
+}
+
+/* ====================styling the container =================== */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 1rem auto;
+    align-items: center;
+    height: 90vh;
+    gap: 3rem;
+    flex-grow: 1;
+}
+
+/*===================== styling the theme container ==================*/
+.theme-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--key-text-clr);
+    font-size: 1.4rem;
+
+}
+
+.theme-selection-container {
+    display: flex;
+    gap: 3rem;
+}
+
+.theme-selection-container span {
+    align-self: flex-end;
+    font-size: 1.2rem;
+}
+
+.fa-toggle-off:before {
+    font-size: 2rem;
+    width: 30px;
+
+}
+
+/*============================ styling the output screen ==============================*/
+.output-screen-container {
+    width: 100%;
+    background-color: var(--screen-bg-clr);
+    min-height: 15%;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+}
+
+.output-number {
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+    padding-bottom: 1rem;
+    font-size: calc(var(--key-fs) + 15px);
+}
+.operation{
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    padding-top: 1rem;
+    font-size: 20px;
+}
+
+/* ===============================styling cacultor container ============================== */
+
+.keypad-container {
+    background-color: var(--keypad-bg-clr);
+    width: 100%;
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    border-radius: 10px;
+    grid-template-areas:
+        "seven eight nine del"
+        "four five six plus"
+        "one two three minus"
+        "dot zero divide multiply"
+        "reset reset equals equals";
+    padding: 3rem;
+
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.zero {
+    grid-area: zero;
+}
+
+.dot {
+    grid-area: dot;
+}
+
+.plus {
+    grid-area: plus;
+}
+
+.minus {
+    grid-area: minus;
+}
+
+.multiply {
+    grid-area: multiply;
+}
+
+.divide {
+    grid-area: divide;
+}
+
+.reset {
+    grid-area: reset;
+}
+
+.equals {
+    grid-area: equals;
+
+}
+
+.equals:hover {
+    background-color: var(--key-toggle-clr);
+    color: var(--numbers-toogle-bg-clr);
+    box-shadow: 5px 3px 5px var(--key-toggle-shadow);
+    transition: 250ms;
+}
+
+.del {
+    grid-area: del;
+}

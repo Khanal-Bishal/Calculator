@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css"
+    integrity="sha512-L+sMmtHht2t5phORf0xXFdTC0rSlML1XcraLTrABli/0MMMylsJi3XA23ReVQkZ7jLkOEIMicWGItyK4CAt2Xw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- start of theme container  -->
+    <div class="theme-container">
+      <h2>calc</h2>
+      <div class="theme-selection-container">
+        <span> THEME</span>
+        <i class="fa-solid fa-toggle-off toogle-button"></i>
+      </div>
+    </div>
+    <!-- start of output screen  -->
+    <div class="output-screen-container">
+      <div class="operation"></div>
+      <div class="output-number"></div>
+    </div>
+    <!-- start of keypad container  -->
+    <div class="keypad-container">
+      <span class="one keypad"><span>1</span></span>
+      <span class="two keypad"><span>2</span></span>
+      <span class="three keypad"><span>3</span></span>
+      <span class="four keypad"><span>4</span></span>
+      <span class="five keypad"><span>5</span></span>
+      <span class="six keypad"><span>6</span></span>
+      <span class="seven keypad"><span>7</span></span>
+      <span class="eight keypad"><span>8</span></span>
+      <span class="nine keypad"><span>9</span></span>
+      <span class="zero keypad"><span>0</span></span>
+      <span class="dot keypad"><span>.</span></span>
+      <span class="plus keypad"><span>+</span></span>
+      <span class="minus keypad"><span>-</span></span>
+      <span class="multiply keypad"><span>X</span></span>
+      <span class="divide keypad"><span>/</span></span>
+      <span class="del del-reset"><span>DEL</span></span>
+      <span class="equals keypad"><span> =</span></span>
+      <span class="reset del-reset"><span>RESET</span></span>
+    </div>
+  </div>
+<script src="main.js"></script>
+</body>
+
+</html>
