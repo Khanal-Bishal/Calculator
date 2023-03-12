@@ -39,6 +39,10 @@ body {
     font-family: var(--key-ff);
     
 }
+.toogle-button
+{
+    color: rgb(198, 93, 57);
+}
 
 /*=================== utility classes  ======================*/
 .keypad {
@@ -248,4 +252,63 @@ body {
 
 .del {
     grid-area: del;
+}
+
+/* adding media query for mobile size  */
+@media (max-width:375px) {
+    .main-container{
+        width: 98%;
+    }
+    .keypad-container{
+        grid-gap: 1rem;
+        padding: 2rem;
+    }
+}
+/* theme 2 styling background color  */
+.theme2-background
+{
+    background-color:hsl(268, 75%, 9%);
+    transition: 500ms;
+}
+.theme2-keypad-container
+{
+    background-color: hsl(288deg 80% 11%);
+    transition: 500ms;
+
+}
+.theme2-theme-container
+{
+color: hsl(52, 100%, 62%);
+transition: 500ms;
+
+}
+.theme2-keypad
+{
+    background-color:hsl(268, 47%, 21%);
+    color: hsl(52, 100%, 62%);
+transition: 500ms;
+
+}
+.theme2-keypad:hover
+{
+    color: hsl(30, 25%, 89%);
+    background-color:  hsl(285, 91%, 52%);
+    transition: 500ms;
+}
+.theme2-delReset
+{
+    background-color: hsl(268, 47%, 21%);
+    color: hsl(52, 100%, 62%);
+    transition: 500ms;
+}
+.theme2-delReset:hover{
+    color:hsl(30, 25%, 89%);
+    background-color:  hsl(290, 70%, 36%);
+    transition: 500ms;
+}
+.theme2-outputScreen
+{
+    background-color: hsl(288deg 80% 11%);
+    transition: 500ms;
+
 }

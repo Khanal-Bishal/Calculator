@@ -1,3 +1,9 @@
+const body=document.querySelector('body');
+const keypadContainer=document.querySelector('.keypad-container');
+const outputScreen=document.querySelector('.output-screen-container');
+const themeContainer=document.querySelector('.theme-container');
+const delReset=document.querySelectorAll('.del-reset');
+const keypad=document.querySelectorAll('.keypad');
 const one = document.querySelector('.one');
 const two = document.querySelector('.two');
 const three = document.querySelector('.three');
@@ -18,13 +24,15 @@ const equals = document.querySelector('.equals');
 const del=document.querySelector('.del');
 const outputNumber = document.querySelector('.output-number');
 const operation = document.querySelector('.operation');
-
+const toogleButton=document.querySelector('.toogle-button');
+const type=new Audio('type.mp3');
 
 var firstOperandCollector = "";
 var secondOperandCollector = "";
 var operator = "";
 
 one.addEventListener('click', (event) => {
+    type.play();
     if (operator == '+' || operator == '-' || operator == '/' || operator == '*') {
         operation.innerText= firstOperandCollector+operator+secondOperandCollector+'1';
         secondOperandCollector += '1';
@@ -37,6 +45,8 @@ one.addEventListener('click', (event) => {
 
 })
 two.addEventListener('click', (event) => {
+    type.play();
+
     if (operator == '+' || operator == '-' || operator == '/' || operator == '*') {
         operation.innerText= firstOperandCollector+operator+secondOperandCollector+'2';
         secondOperandCollector += '2';
@@ -48,6 +58,7 @@ two.addEventListener('click', (event) => {
 
 })
 three.addEventListener('click', (event) => {
+    type.play();
     if (operator == '+' || operator == '-' || operator == '/' || operator == '*') {
         operation.innerText= firstOperandCollector+operator+secondOperandCollector+'3';
         secondOperandCollector += '3';
@@ -60,6 +71,7 @@ three.addEventListener('click', (event) => {
 
 })
 four.addEventListener('click', (event) => {
+    type.play();
     if (operator == '+' || operator == '-' || operator == '/' || operator == '*') {
         operation.innerText= firstOperandCollector+operator+secondOperandCollector+'4';
         secondOperandCollector += '4';
@@ -71,6 +83,7 @@ four.addEventListener('click', (event) => {
 
 })
 five.addEventListener('click', (event) => {
+    type.play();
     if (operator == '+' || operator == '-' || operator == '/' || operator == '*') {
         operation.innerText= firstOperandCollector+operator+secondOperandCollector+'5';
         secondOperandCollector += '5';
@@ -82,6 +95,7 @@ five.addEventListener('click', (event) => {
 
 })
 six.addEventListener('click', (event) => {
+    type.play();
     if (operator == '+' || operator == '-' || operator == '/' || operator == '*') {
         operation.innerText= firstOperandCollector+operator+secondOperandCollector+'6';
         secondOperandCollector += '6';
@@ -93,6 +107,7 @@ six.addEventListener('click', (event) => {
 
 })
 seven.addEventListener('click', (event) => {
+    type.play();
     if (operator == '+' || operator == '-' || operator == '/' || operator == '*') {
         operation.innerText= firstOperandCollector+operator+secondOperandCollector+'7';
         secondOperandCollector += '7';
@@ -104,6 +119,7 @@ seven.addEventListener('click', (event) => {
 
 })
 eight.addEventListener('click', (event) => {
+    type.play();
     if (operator == '+' || operator == '-' || operator == '/' || operator == '*') {
         operation.innerText= firstOperandCollector+operator+secondOperandCollector+'8';
         secondOperandCollector += '8';
@@ -115,6 +131,7 @@ eight.addEventListener('click', (event) => {
 
 })
 nine.addEventListener('click', (event) => {
+    type.play();
     if (operator == '+' || operator == '-' || operator == '/' || operator == '*') {
         operation.innerText= firstOperandCollector+operator+secondOperandCollector+'9';
         secondOperandCollector += '9';
@@ -126,6 +143,7 @@ nine.addEventListener('click', (event) => {
 
 })
 zero.addEventListener('click', (event) => {
+    type.play();
     if (operator == '+' || operator == '-' || operator == '/' || operator == '*') {
         operation.innerText= firstOperandCollector+operator+secondOperandCollector+'0';
         secondOperandCollector += '0';
@@ -138,24 +156,33 @@ zero.addEventListener('click', (event) => {
 })
 
 plus.addEventListener('click', (event) => {
+    type.play();
+    operation.innerText='';
     operation.innerText= firstOperandCollector+'+' ;
     operator = '+';
 })
 minus.addEventListener('click', (event) => {
+    type.play();
+    operation.innerText='';
     operation.innerText+= firstOperandCollector+'-' ;
     operator = '-';
 })
 divide.addEventListener('click', (event) => {
+    type.play();
+    operation.innerText='';
     operation.innerText+= firstOperandCollector+'/' ;
     operator = '/';
 })
 multiply.addEventListener('click', (event) => {
+    type.play();
+    operation.innerText='';
     operation.innerText+= firstOperandCollector+'*' ;
     operator = '*';
 })
 
 
 equals.addEventListener('click', () => {
+    type.play();
     if (operator == '+') {
         outputNumber.innerText = parseInt(firstOperandCollector) + parseInt(secondOperandCollector);
         firstOperandCollector = '';
@@ -185,6 +212,7 @@ equals.addEventListener('click', () => {
 //resetting the opetations
 reset.addEventListener('click',()=>
 {
+    type.play();
     firstOperandCollector='';
     secondOperandCollector='';
     operation.innerText='';
@@ -195,6 +223,7 @@ reset.addEventListener('click',()=>
 //deleting the entered number
 del.addEventListener('click',()=>
 {
+    type.play();
 let totalString=firstOperandCollector+operator+secondOperandCollector;
  if(totalString==firstOperandCollector)
  {
@@ -212,3 +241,46 @@ let totalString=firstOperandCollector+operator+secondOperandCollector;
    operation.innerText=firstOperandCollector+operator+secondOperandCollector;
  }
 })
+
+// changing  the theme of the page 
+toogleButton.addEventListener('click',()=>
+{
+   toogleButton.classList.toggle('fa-toggle-off');
+   toogleButton.classList.toggle('fa-toggle-on');
+    if (toogleButton.classList.contains('fa-toggle-on'))
+    {
+       body.classList.add('theme2-background');
+       themeContainer.classList.add('theme2-theme-container');
+        keypad.forEach(keys=>
+            {
+                keys.classList.add('theme2-keypad');
+            });
+
+         delReset.forEach(keys=>
+             {
+                    keys.classList.add('theme2-delReset');
+             })
+        keypadContainer.classList.add('theme2-keypad-container');
+        outputScreen.classList.add('theme2-outputScreen');
+        
+    }
+    else{
+        body.classList.remove('theme2-background');
+       themeContainer.classList.remove('theme2-theme-container');
+
+       keypad.forEach(keys=>
+        {
+            keys.classList.remove('theme2-keypad');
+        });
+
+        delReset.forEach(keys=>
+            {
+                keys.classList.remove('theme2-delReset');
+            })
+        keypadContainer.classList.remove('theme2-keypad-container');
+        outputScreen.classList.remove('theme2-outputScreen');
+    }
+    
+})
+
+
